@@ -10,14 +10,27 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            string name = "Aba";
-            char letter = 'a';
+            string textAge = "-23";
+            
+            int age = Convert.ToInt32(textAge);
+            Console.WriteLine(age);
 
-            Console.Write("Your name is ");
-            Console.Write(name);
+            string textBignumber = "-900000000";
+            long bigNumber = Convert.ToInt64(textBignumber);
+            Console.WriteLine(bigNumber);
 
-            Console.WriteLine();
-            Console.WriteLine(letter);
+            string textNegative = " -55.2";
+            double negative = Convert.ToDouble(textNegative);
+            Console.WriteLine(negative);
+
+            string textPrecision = "5.000001";
+            float precision = Convert.ToSingle(textPrecision);
+            Console.WriteLine(precision);
+
+            string textMoney = "14.99";
+            decimal money = Convert.ToDecimal(textMoney);
+            Console.WriteLine(money);
+
             Console.ReadLine();
         }
     }
