@@ -10,14 +10,18 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            bool value = true;
+            double age = 23;
 
-            bool isMale = true;
-            Console.WriteLine(isMale);
+            age /= 10;
+            Console.WriteLine(age);
 
-            isMale = false;
-            Console.WriteLine(isMale);
+            string name = "Aba";
+            name += " is programming!";
+            Console.WriteLine(name);
 
+            int i = 0;
+            Console.WriteLine(++i);
+            Console.WriteLine(i);
 
             Console.ReadLine();
         }
