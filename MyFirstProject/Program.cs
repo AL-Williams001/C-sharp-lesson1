@@ -10,18 +10,22 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            double age = 23;
+            int firstNum = 11;
+            int secondNum = 2;
+            // 10 / 3 = 3r1
+            // 3 x 3 = 9, 1 left over to get 10
 
-            age /= 10;
-            Console.WriteLine(age);
+            // 10 % 2 = 0
+            // 11 % 2 = 1
+            // 12 % 2 = 0
+            // 12 % 2 = 1
 
-            string name = "Aba";
-            name += " is programming!";
-            Console.WriteLine(name);
 
-            int i = 0;
-            Console.WriteLine(++i);
-            Console.WriteLine(i);
+            Console.WriteLine(firstNum % secondNum);
+
+            Console.WriteLine(1000 % 90);
+            Console.WriteLine(10 % 90);
+            Console.WriteLine(71 % 10);
 
             Console.ReadLine();
         }
