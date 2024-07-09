@@ -10,23 +10,33 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int firstNum = 11;
-            int secondNum = 2;
-            // 10 / 3 = 3r1
-            // 3 x 3 = 9, 1 left over to get 10
+            var age = 23;
+            Console.WriteLine(age);
 
-            // 10 % 2 = 0
-            // 11 % 2 = 1
-            // 12 % 2 = 0
-            // 12 % 2 = 1
+            //long bigNumber = -900000000L;
+            var bigNumber = 90000L;
+            Console.WriteLine(bigNumber);
 
+            //double negative = -55.2D;
+            var negative = -55.2D;
+            Console.WriteLine(negative);
 
-            Console.WriteLine(firstNum % secondNum);
+            //float precision = 5.000001F;
+            var precision = 5.000001F;
+            Console.WriteLine(precision);
 
-            Console.WriteLine(1000 % 90);
-            Console.WriteLine(10 % 90);
-            Console.WriteLine(71 % 10);
+            //decimal money = 14.99M;
+            var money = 14.99M;
+            Console.WriteLine(money);
 
+            var name = "Abba";
+
+            var letter = 'a';
+
+            Console.WriteLine(name);
+            Console.WriteLine(letter);
+            // use var when value is obvious like age, name, etc or it's not big 
+            // don't use far for big numbers
             Console.ReadLine();
         }
     }
