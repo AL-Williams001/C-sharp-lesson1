@@ -10,33 +10,17 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            var age = 23;
-            Console.WriteLine(age);
+            const int vat = 20;
+            const double percentVAT = vat / 100D;
 
-            //long bigNumber = -900000000L;
-            var bigNumber = 90000L;
-            Console.WriteLine(bigNumber);
+            int balance = 1000;
 
-            //double negative = -55.2D;
-            var negative = -55.2D;
-            Console.WriteLine(negative);
+            Console.WriteLine(balance * (vat/100D));
+            Console.WriteLine(balance * percentVAT);
 
-            //float precision = 5.000001F;
-            var precision = 5.000001F;
-            Console.WriteLine(precision);
+            const string version = "v1.0";
 
-            //decimal money = 14.99M;
-            var money = 14.99M;
-            Console.WriteLine(money);
-
-            var name = "Abba";
-
-            var letter = 'a';
-
-            Console.WriteLine(name);
-            Console.WriteLine(letter);
-            // use var when value is obvious like age, name, etc or it's not big 
-            // don't use far for big numbers
+            Console.WriteLine(vat);
             Console.ReadLine();
         }
     }
