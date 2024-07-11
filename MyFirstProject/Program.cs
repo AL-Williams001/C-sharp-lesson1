@@ -10,14 +10,15 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-          
-            var name = "Aba";
-            var number = "0123456789";
-            var age = 23;
 
-            Console.WriteLine(name);
-            Console.WriteLine(number);
-            Console.WriteLine(age);
+            int num1 = 10;
+            int num2 = 2;
+            int remainder = num1 % num2;
+            Console.WriteLine(remainder);
+
+            num1 = 11;
+            remainder = num1 % num2;
+            Console.WriteLine(remainder);
 
             Console.ReadLine();
         }
