@@ -12,69 +12,43 @@ namespace MyFirstProject
         {
 
 
-            /*Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
+            Console.WriteLine("Enter a day of the week: ");
+            int day = Convert.ToInt32(Console.ReadLine());
 
-
-            Console.Write("Enter your age: ");
-            string ageInput = Console.ReadLine();
-            int age = Convert.ToInt32(ageInput);
-
-
-
-            Console.WriteLine();
-            Console.WriteLine("Your name is " + name + " and your age is " + age);*/
-
-
-            /*if (age >= 18 && age <= 25)
+            /*if (day == 1)
             {
-                Console.WriteLine("You are between 18 and 25");
+                Console.WriteLine("Mon");
             }
-            else if (age >= 26)
+            else if (day == 2)
             {
-                Console.WriteLine("You are 26 and older");
-            }
-
-            if (age < 0 || age > 150)
-            {
-                Console.WriteLine("Inavlid age!");
+                Console.WriteLine("Tue");
             }
             else
             {
-                if (age >= 18 && age <= 25)
-                {
-                    Console.WriteLine("You are between 18 and 25");
-                }
-                else if (age >= 26)
-                {
-                    Console.WriteLine("You are 26 and older");
-                }
-                Console.WriteLine("valid age!");
+                Console.WriteLine("Invalid input, enter a value between 1 and 7");
             }*/
 
-            Console.Write("Enter the first number ");
-            string numberAInput = Console.ReadLine();
-            int numberA = Convert.ToInt32(numberAInput);
 
-             Console.Write("Enter the second number ");
-            string numberBInput = Console.ReadLine();
-            int numberB = Convert.ToInt32(numberBInput);
-
-            int answer = numberA * numberB;
-            Console.Write("Value of " + numberA + "x" + numberB + ": ");
-            string answerInput = Console.ReadLine();
-            int actualAnswer = Convert.ToInt32(answerInput);
-
-            if (answer == actualAnswer)
+            switch (day)
             {
-                Console.WriteLine("Well done!");
-            }
-            else 
-            {
-                Console.WriteLine("Close but it is wrong!");
+                case 1: Console.WriteLine("Mon");
+                    break;
+                case 2: Console.WriteLine("Tue");
+                    break;
+                case 3: Console.WriteLine("Wed");
+                    break;
+                case 4: Console.WriteLine("Thu");
+                    break;
+                case 5: Console.WriteLine("Fri");
+                    break;
+                case 6: Console.WriteLine("Sat");
+                    break;
+                case 7: Console.WriteLine("Sun");
+                    break;
+                default: Console.WriteLine("Invalid input, enter a value between 1 and 7");
+                     break ;
             }
 
-       
             Console.ReadLine();
         }
     }
