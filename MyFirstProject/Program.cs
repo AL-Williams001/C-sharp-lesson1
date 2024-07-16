@@ -11,43 +11,33 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
+            Console.WriteLine("What do you want to repeat?: ");
+            string message = Console.ReadLine();
 
-            Console.WriteLine("Enter a day of the week: ");
-            int day = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many times do you want to repeat it?: ");
+            int loopCounter = Convert.ToInt32(Console.ReadLine());
 
-            /*if (day == 1)
+            if (loopCounter <= 0)
             {
-                Console.WriteLine("Mon");
-            }
-            else if (day == 2)
-            {
-                Console.WriteLine("Tue");
+                Console.WriteLine("Sorry, please enter a value above 0");
             }
             else
             {
-                Console.WriteLine("Invalid input, enter a value between 1 and 7");
-            }*/
 
+                for (int i = 0; i < loopCounter; i++)
+                {
+                Console.WriteLine(message);
+                }
 
-            switch (day)
-            {
-                case 1: Console.WriteLine("Mon");
-                    break;
-                case 2: Console.WriteLine("Tue");
-                    break;
-                case 3: Console.WriteLine("Wed");
-                    break;
-                case 4: Console.WriteLine("Thu");
-                    break;
-                case 5: Console.WriteLine("Fri");
-                    break;
-                case 6: Console.WriteLine("Sat");
-                    break;
-                case 7: Console.WriteLine("Sun");
-                    break;
-                default: Console.WriteLine("Invalid input, enter a value between 1 and 7");
-                     break ;
             }
+
+
+
+
+         /*   for (int i = 1; i <= 10; i +=2 )
+            {
+                Console.WriteLine(i);
+            }*/
 
             Console.ReadLine();
         }
