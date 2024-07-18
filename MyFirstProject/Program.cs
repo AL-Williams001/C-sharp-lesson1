@@ -11,33 +11,67 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            Console.WriteLine("What do you want to repeat?: ");
-            string message = Console.ReadLine();
 
-            Console.WriteLine("How many times do you want to repeat it?: ");
-            int loopCounter = Convert.ToInt32(Console.ReadLine());
+            /* for (int i = 0; i < 10; i++)
+             {
+                 Console.WriteLine(i);
+             }*/
 
-            if (loopCounter <= 0)
+            /* int i = 0;
+
+             while (i < 10)
+             {
+                 Console.WriteLine(i);
+                 i++;
+             }*/
+
+            Console.Write("Enter the first number ");
+            string numberAInput = Console.ReadLine();
+            int numberA = Convert.ToInt32(numberAInput);
+
+            Console.Write("Enter the second number ");
+            string numberBInput = Console.ReadLine();
+            int numberB = Convert.ToInt32(numberBInput);
+
+            int answer = numberA * numberB;
+            int actualAnswer = 0;
+
+            Console.WriteLine();
+            Console.Write("Whats the  value of " + numberA + "x" + numberB + "?");
+            Console.WriteLine();
+
+            /*while (answer != actualAnswer)
             {
-                Console.WriteLine("Sorry, please enter a value above 0");
-            }
-            else
-            {
+                Console.WriteLine("Enter your answer: ");
+                string answerInput = Console.ReadLine();
+                actualAnswer = Convert.ToInt32(answerInput);
 
-                for (int i = 0; i < loopCounter; i++)
+                if (answer != actualAnswer)
                 {
-                Console.WriteLine(message);
+                    Console.WriteLine("Close but it is wrong!");
+                    Console.WriteLine();
                 }
 
-            }
-
-
-
-
-         /*   for (int i = 1; i <= 10; i +=2 )
-            {
-                Console.WriteLine(i);
             }*/
+
+            do
+            {
+
+                Console.WriteLine("Enter your answer: ");
+                string answerInput = Console.ReadLine();
+                actualAnswer = Convert.ToInt32(answerInput);
+
+                if (answer != actualAnswer)
+                {
+                    Console.WriteLine("Close but it is wrong!");
+                    Console.WriteLine();
+                }
+
+
+            } while (answer != actualAnswer);
+
+            Console.WriteLine();
+            Console.WriteLine("Well done!");
 
             Console.ReadLine();
         }
