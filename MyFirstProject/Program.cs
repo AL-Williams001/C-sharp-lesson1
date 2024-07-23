@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace MyFirstProject
 {
@@ -11,21 +12,26 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int age = 10;
+            double value = 1000D / 12.34;
 
-            /*if (age >= 0)
-            {
-                Console.WriteLine("valid");
-            }
-            else 
-            {
-                Console.WriteLine("Invalid");
-            }*/
+            Console.WriteLine(value);
+            Console.WriteLine(string.Format("{0:0}", value));
+            Console.WriteLine(string.Format("{0:0.0}", value));
+            Console.WriteLine(string.Format("{0:0.00}", value));
 
-            //condition ? true : false
+            double money = -10D / 3D; //3.333333333
 
-            string result = age >= 0 ? "valid" : "Invalid";
-            Console.WriteLine(result);
+            Console.WriteLine(money);
+            Console.WriteLine(string.Format("$10 / $3 = ${0:0.00}", money));
+            Console.WriteLine(money.ToString("C"));
+            Console.WriteLine(money.ToString("C0"));
+            Console.WriteLine(money.ToString("C1"));
+            Console.WriteLine(money.ToString("C2"));
+
+            Console.WriteLine(money.ToString("C", CultureInfo.CurrentCulture));
+            Console.WriteLine(money.ToString("C", CultureInfo.CreateSpecificCulture("en-GB")));
+            Console.WriteLine(money.ToString("C", CultureInfo.CreateSpecificCulture("en-US")));
+            Console.WriteLine(money.ToString("C", CultureInfo.CreateSpecificCulture("en-PH")));
 
 
 
