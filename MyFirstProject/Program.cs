@@ -12,30 +12,16 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-
-            bool success = true;
-            while(success)
-            {
-
             Console.Write("Enter a number: ");
-            string numInput = Console.ReadLine();
-          
+            int number = Convert.ToInt32(Console.ReadLine());
 
-
-            if (int.TryParse(numInput, out int num))
+            for (int i = 1; i <= 10; i++)
             {
-                success = false;
-                Console.WriteLine(num);
-            }
-            else
-            {
-                Console.WriteLine("Failed to convert!");
+                Console.WriteLine("{0} x {1} = {2}", i, number, i * number);
             }
 
 
-            }
 
-           
 
             Console.ReadLine();
         }
