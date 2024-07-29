@@ -12,35 +12,20 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            bool threeDiv = false;
-            bool fiveDiv = false;
+            string speech = "He said \"something\"";
+            string path = "c:\\Users\\CoffeeNCode\\Desktop\\C# Course\nNew Line Test";
+            Console.WriteLine(path);
+            Console.WriteLine(speech);
 
 
-            for (int i = 1; i <= 15 ; i++)
-            {
-                threeDiv = i % 3 == 0;
-                fiveDiv = i % 5 == 0;
+            path = @"c:\Users\CoffeeNCode\Desktop\C# Course";
+            Console.WriteLine(path);
 
-                if (threeDiv && fiveDiv)
-                {
-                    Console.WriteLine("FizzBuzz");
-                }
-                else if (threeDiv)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if (fiveDiv)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            }
+            string name = @"Hello ""Someone""";
+            Console.WriteLine(name);
 
-
-
+            name = "Hello 'someone'";
+            Console.WriteLine(name);
 
             Console.ReadLine();
         }
