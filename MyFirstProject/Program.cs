@@ -12,20 +12,33 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            string speech = "He said \"something\"";
-            string path = "c:\\Users\\CoffeeNCode\\Desktop\\C# Course\nNew Line Test";
-            Console.WriteLine(path);
-            Console.WriteLine(speech);
+            string name = "Aba";
+            int age = 23;
+
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Age: " + age);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Name: " + name + "\nAge: " + age);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Name: {0} \nAge: {1}", name, age);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Your name is " + name + ", and Your age is " + age);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Your name is {0} and your age is {1}", name, age);
+
+            Console.WriteLine();
+
+            Console.WriteLine($"Your name is {name} and your age is {age}");
 
 
-            path = @"c:\Users\CoffeeNCode\Desktop\C# Course";
-            Console.WriteLine(path);
-
-            string name = @"Hello ""Someone""";
-            Console.WriteLine(name);
-
-            name = "Hello 'someone'";
-            Console.WriteLine(name);
 
             Console.ReadLine();
         }
