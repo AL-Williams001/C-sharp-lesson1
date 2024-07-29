@@ -15,27 +15,10 @@ namespace MyFirstProject
             string name = "Aba";
             int age = 23;
 
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Age: " + age);
-
+            Console.WriteLine($"Your name is {name}");
             Console.WriteLine();
-
-            Console.WriteLine("Name: " + name + "\nAge: " + age);
-
+            Console.WriteLine($"Your age is {age}");
             Console.WriteLine();
-
-            Console.WriteLine("Name: {0} \nAge: {1}", name, age);
-
-            Console.WriteLine();
-
-            Console.WriteLine("Your name is " + name + ", and Your age is " + age);
-
-            Console.WriteLine();
-
-            Console.WriteLine("Your name is {0} and your age is {1}", name, age);
-
-            Console.WriteLine();
-
             Console.WriteLine($"Your name is {name} and your age is {age}");
 
 
