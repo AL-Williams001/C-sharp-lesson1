@@ -12,14 +12,25 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            string name = "Aba";
-            int age = 23;
+            
 
-            Console.WriteLine($"Your name is {name}");
-            Console.WriteLine();
-            Console.WriteLine($"Your age is {age}");
-            Console.WriteLine();
-            Console.WriteLine($"Your name is {name} and your age is {age}");
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+
+
+            if (name != string.Empty)
+
+            {
+                Console.WriteLine($"Your name is {name}");
+            }
+            else
+            {
+                Console.WriteLine("Name is empty ");
+            }
+
+           
+
+
 
 
 
