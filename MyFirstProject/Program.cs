@@ -14,22 +14,34 @@ namespace MyFirstProject
         {
             
 
-            Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
+           
 
 
-            if (name != string.Empty)
+            string message = "Hello";
+            string compare = "Hello";
 
+
+            if (message.Equals(compare))
             {
-                Console.WriteLine($"Your name is {name}");
+                Console.WriteLine("Same");
             }
             else
             {
-                Console.WriteLine("Name is empty ");
+                Console.WriteLine("Diff");
             }
 
-           
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
 
+            //if (name != "")
+            if (!name.Equals(""))
+            {
+                Console.WriteLine("Your name is " + name);
+            }
+            else
+            {
+                Console.WriteLine("Invalid name Input");
+            }
 
 
 
