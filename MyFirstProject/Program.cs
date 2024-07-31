@@ -13,36 +13,21 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine($"Your names is {name}");
+
+            //if (name != "")
+               // Console.WriteLine("0");
+
+            //if (!name.Equals(""))
+               // Console.WriteLine("1");
+
+            if (!string.IsNullOrEmpty(name))
+                Console.WriteLine("2");
 
 
-
-
-            string message = "C# is awesome";
-            //char []
-            /*Console.WriteLine(message[0]);
-            Console.WriteLine(message[1]);
-            Console.WriteLine(message[2]);
-            Console.WriteLine(message[3]);*/
-
-            for (int i = 0; i < message.Length; i++)
-            {
-                Console.Write(message[i]);
-                System.Threading.Thread.Sleep(50);
-            }
-            Console.WriteLine();
-            Console.WriteLine(message.Contains("C"));
-
-            bool contains = false;
-
-            for (int i = 0; i < message.Length;i++)
-            {
-                if (message[i].Equals('a'))
-                {
-                    contains = true;
-                }
-            }
-
-            Console.WriteLine(contains);
 
             Console.ReadLine();
         }
