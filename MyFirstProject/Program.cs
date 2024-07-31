@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Globalization;
+
 
 namespace MyFirstProject
 {
@@ -12,39 +12,37 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            
-
-           
 
 
-            string message = "Hello";
-            string compare = "Hello";
 
 
-            if (message.Equals(compare))
+
+            string message = "C# is awesome";
+            //char []
+            /*Console.WriteLine(message[0]);
+            Console.WriteLine(message[1]);
+            Console.WriteLine(message[2]);
+            Console.WriteLine(message[3]);*/
+
+            for (int i = 0; i < message.Length; i++)
             {
-                Console.WriteLine("Same");
+                Console.Write(message[i]);
+                System.Threading.Thread.Sleep(50);
             }
-            else
+            Console.WriteLine();
+            Console.WriteLine(message.Contains("C"));
+
+            bool contains = false;
+
+            for (int i = 0; i < message.Length;i++)
             {
-                Console.WriteLine("Diff");
+                if (message[i].Equals('a'))
+                {
+                    contains = true;
+                }
             }
 
-            Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
-
-            //if (name != "")
-            if (!name.Equals(""))
-            {
-                Console.WriteLine("Your name is " + name);
-            }
-            else
-            {
-                Console.WriteLine("Invalid name Input");
-            }
-
-
-
+            Console.WriteLine(contains);
 
             Console.ReadLine();
         }
