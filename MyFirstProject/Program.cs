@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 
 
 namespace MyFirstProject
@@ -13,25 +14,48 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            Console.Write("Enter your message: ");
-            string message = Console.ReadLine();
+            Console.WriteLine("Enter your password: ");
+            string password = Console.ReadLine();
 
-            //Console.WriteLine(message[0]);
-            //Console.WriteLine(message.Length);
+            Console.WriteLine("Enter password again: ");
+            string passwordC = Console.ReadLine();
 
-            for (int i = 0; i < message.Length; i++)
+            if (!password.Equals(string.Empty))
             {
-                Console.Write(message[i]);
+                if (!passwordC.Equals(string.Empty))
+                {
+
+                    if (password.Length >= 6 && passwordC.Length >=6)
+                    {
+
+                    if (password.Equals(passwordC))
+                    {
+                    Console.WriteLine("Passwords Match");
+                    }
+                    else
+                    {
+                    Console.WriteLine("Passwords do not Match");
+                    }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter 6 or more characters");
+                    }
+
+
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Please entert a password confirmation.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please entert a password.");
             }
 
-            Console.WriteLine();
-
-            for (int i = message.Length - 1; i >= 0; i-- )
-            {
-                Console.Write(message[i]);
-            }
-
-            
 
 
 
