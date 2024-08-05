@@ -13,19 +13,33 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[]
+            int[] numbers = new int []
             {
-                9, 7, 6, 2, 8, 4, 1, 3, 5,
+                0, 1, 2, 3, 4, 5,
             };
 
+            int[] sortedNumbers = new int[numbers.Length];
 
-            Array.Sort(numbers);
+            int x = 0;
 
-            foreach (int num in numbers)
+            for (int i = numbers.Length - 1; i >= 0; i--)
+            {
+                sortedNumbers[x] = numbers[i];
+                x++;
+            }
+
+            foreach (var num in sortedNumbers)
             {
                 Console.Write($"{num} ");
             }
-          
+
+            //Array.Reverse(numbers);
+
+           /* foreach (int number in numbers)
+            {
+                Console.Write($"{number} ");
+            }*/
+
             Console.ReadLine();
         }
     }
