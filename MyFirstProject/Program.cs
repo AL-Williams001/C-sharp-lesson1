@@ -15,21 +15,54 @@ namespace MyFirstProject
         {
             int[] numbers = new int []
             {
-                0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+               90, 199, 22, 50, 30
             };
 
-            //Array.Clear(numbers, 0, numbers.Length);
-            Array.Clear(numbers, 5, 5);
+            Console.Write("Enter number to search: ");
+            int search = Convert.ToInt32(Console.ReadLine());
 
-            /*for (int i = 0; i < numbers.Length; i++) 
-            { 
-                numbers[i] = default;
-            }*/
+            //int position = Array.IndexOf(numbers, search);
+            int position = Array.IndexOf(numbers, search, 1, 2 );
 
-            foreach (int number in numbers)
+            if (position >= 0)
             {
-                Console.Write($"{number} ");
+
+                Console.WriteLine($"Number {search} has been found at positions {position + 1}");
+
             }
+            else
+            {
+                Console.WriteLine($"Number {search} has not been found");
+            }
+
+
+            /*int position = -1;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] == search)
+                {
+                    position = i; 
+                }
+            }
+
+            if (position > -1)
+            {
+
+                Console.WriteLine($"Number {search} has been found at positions {position + 1}");
+
+            }
+            else
+            {
+                Console.WriteLine($"Number {search} has not been found");
+            }*/
+            
+
+
+
+
+
+
 
 
             Console.ReadLine();
