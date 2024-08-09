@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.Xml.Linq;
 
 
 namespace MyFirstProject
@@ -15,35 +17,66 @@ namespace MyFirstProject
         {
 
 
-            int[] numbers = new int[3]
+            /* Dictionary<int, string> names = new Dictionary<int, string>
+             {
+
+                 //KeyValuePair
+                 {1, "AL" },
+                 {2, "Art" },
+                 {3, "Arthur" },
+
+              };
+
+             for (int i = 0; i < names.Count; i++)
+             {
+                 KeyValuePair<int, string> pair = names.ElementAt(i);
+
+                 Console.WriteLine($"{pair.Key} - {pair.Value}");
+             }
+
+             Console.WriteLine();
+
+             foreach (KeyValuePair<int, string> item in names)
+             {
+                 Console.WriteLine($"{item.Key} - {item.Value}");
+             }*/
+
+            Dictionary<string, string> teachers = new Dictionary<string, string>
             {
-                1, 2, 3,
+                {"Math", "AL" },
+                {"Science", "Art" }
             };
 
-            List<int> listNumbers = new List<int>();
 
-            for (int i = 0; i < 3; i++)
+            //Console.WriteLine(teachers["Math"]);
+
+            if (teachers.TryGetValue("Math", out string teacher))
             {
-                Console.Write("Enter a number: ");
-             
-                listNumbers.Add(Convert.ToInt32(Console.ReadLine()));
+                Console.WriteLine(teacher);
+
+                teachers["Math"] = "Joe";
             }
-
-            
-
-            for (int i = 0;i < listNumbers.Count; i++)
+            else
             {
-                Console.WriteLine(listNumbers[i]);
-            }
-
-            listNumbers.RemoveAt(0);
-
-            foreach (var item in listNumbers)
-            {
-                Console.WriteLine(item);
+                Console.WriteLine("Math teacher not found");
             }
 
 
+            if(teachers.ContainsKey("Math"))
+            {
+                teachers.Remove("Math");
+            }
+            else
+            {
+                Console.WriteLine("Math not found");
+            }
+
+
+
+            foreach (var item in teachers)
+            {
+                Console.WriteLine($"{item.Key} - {item.Value}");
+            }
 
             Console.ReadLine();
         }
