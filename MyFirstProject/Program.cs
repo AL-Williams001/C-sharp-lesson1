@@ -16,35 +16,22 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            List<int> odd = new List<int>();
-            List<int> even = new List<int>();
 
-            for (int i = 0;i <= 50; i++)
+            int num = 10;
+            int length = 10;
+            int[] result = new int[length];
+            int counter = 0;
+
+            for (int i = 1; i <= result.Length; i++, counter++)
             {
-                if (i % 2 == 0)
-                {
-                    even.Add(i);
-                }
-                else
-                {
-                    odd.Add(i);
-                }
+                result[counter] = num * i;
+                
             }
 
-            Console.WriteLine( "Printing even numbers: ");
-
-            foreach (var item in even)
+            foreach (var item in result)
             {
                 Console.Write($"{item} ");
             }
-
-            Console.WriteLine(Environment.NewLine + "Printing odd numbers: ");
-
-            foreach (var item in odd)
-            {
-                Console.Write($"{item} ");
-            }
-
 
 
             Console.ReadLine();
