@@ -16,67 +16,36 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
+            List<int> odd = new List<int>();
+            List<int> even = new List<int>();
 
-            /* Dictionary<int, string> names = new Dictionary<int, string>
-             {
-
-                 //KeyValuePair
-                 {1, "AL" },
-                 {2, "Art" },
-                 {3, "Arthur" },
-
-              };
-
-             for (int i = 0; i < names.Count; i++)
-             {
-                 KeyValuePair<int, string> pair = names.ElementAt(i);
-
-                 Console.WriteLine($"{pair.Key} - {pair.Value}");
-             }
-
-             Console.WriteLine();
-
-             foreach (KeyValuePair<int, string> item in names)
-             {
-                 Console.WriteLine($"{item.Key} - {item.Value}");
-             }*/
-
-            Dictionary<string, string> teachers = new Dictionary<string, string>
+            for (int i = 0;i <= 50; i++)
             {
-                {"Math", "AL" },
-                {"Science", "Art" }
-            };
-
-
-            //Console.WriteLine(teachers["Math"]);
-
-            if (teachers.TryGetValue("Math", out string teacher))
-            {
-                Console.WriteLine(teacher);
-
-                teachers["Math"] = "Joe";
+                if (i % 2 == 0)
+                {
+                    even.Add(i);
+                }
+                else
+                {
+                    odd.Add(i);
+                }
             }
-            else
+
+            Console.WriteLine( "Printing even numbers: ");
+
+            foreach (var item in even)
             {
-                Console.WriteLine("Math teacher not found");
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine(Environment.NewLine + "Printing odd numbers: ");
+
+            foreach (var item in odd)
+            {
+                Console.Write($"{item} ");
             }
 
 
-            if(teachers.ContainsKey("Math"))
-            {
-                teachers.Remove("Math");
-            }
-            else
-            {
-                Console.WriteLine("Math not found");
-            }
-
-
-
-            foreach (var item in teachers)
-            {
-                Console.WriteLine($"{item.Key} - {item.Value}");
-            }
 
             Console.ReadLine();
         }
