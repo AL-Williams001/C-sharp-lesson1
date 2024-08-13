@@ -11,30 +11,35 @@ using System.Xml.Linq;
 
 namespace MyFirstProject
 {
-    internal class Program
+
+    class Test
+    {
+        public static void something()
+        {
+            Console.WriteLine();
+        }
+    }
+
+
+     class Program
     {
         static void Main(string[] args)
         {
+            
+            Test.something();
 
-
-            int num = 10;
-            int length = 10;
-            int[] result = new int[length];
-            int counter = 0;
-
-            for (int i = 1; i <= result.Length; i++, counter++)
-            {
-                result[counter] = num * i;
-                
-            }
-
-            foreach (var item in result)
-            {
-                Console.Write($"{item} ");
-            }
-
+            WelcomeMessage();
+            
 
             Console.ReadLine();
         }
+
+
+        static void WelcomeMessage()
+        {
+            Console.WriteLine("Welcome AL");
+        }
+
+
     }
 }
