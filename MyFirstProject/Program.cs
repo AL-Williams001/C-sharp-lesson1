@@ -12,33 +12,42 @@ using System.Xml.Linq;
 namespace MyFirstProject
 {
 
-    class Test
-    {
-        public static void something()
-        {
-            Console.WriteLine();
-        }
-    }
+   
 
 
      class Program
     {
         static void Main(string[] args)
         {
-            
-            Test.something();
 
             WelcomeMessage();
-            
+
+            CreateAndPrintArray();
+
+        
+
 
             Console.ReadLine();
         }
 
 
+        static void CreateAndPrintArray()
+        {
+            int[] numbers = new int[5] {0, 1, 2, 3, 4 };
+
+            foreach (var item in numbers)
+            {
+                Console.Write($"{item} ");
+            }
+        }
+
+
         static void WelcomeMessage()
         {
-            Console.WriteLine("Welcome AL");
+            Console.WriteLine("Welcome to my program!");
         }
+
+
 
 
     }
