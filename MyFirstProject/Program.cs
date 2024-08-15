@@ -22,102 +22,59 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            Console.Title = ReturnNameAgePair();
-
-            PrintIntroduction();
-
-            int[] numbers = new int[3];
-
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                
-            
-            numbers[i] = ReadNumberFromConsole();
-
-            }
-
-            foreach (var item in numbers)
-            {
-                Console.Write($"{item} ");
-            }
+            Console.WriteLine(Add(50, 50));
 
 
-            Console.WriteLine();
+            int num = ReadInt("Enter a number");
+            Console.WriteLine(num);
 
-            int[] newNumbers = CreateRandomArray();
+            int angle = ReadInt("Enter a angle");
+            Console.WriteLine(angle);
 
-            foreach (var item in newNumbers)
-            {
-                Console.Write($"{item} ");
-            }
+            int firstNum = ReadInt("Enter first number");
+            int secondNum = ReadInt("Enter second number");
+            int result = Add(firstNum, secondNum);
 
-            Console.WriteLine(Add());
+            Console.WriteLine(result);
+
+           
+            string name = ReadString("Enter your name");
+            int age = ReadInt("Enter your age");
+            string details = UserDetails(name, age);
+
+            Console.WriteLine(details);
 
 
             Console.ReadLine();
-        }
-
-       static void something()
-        {
 
         }
 
-        static void conversion()
+        static string UserDetails (string name, int age)
         {
-
-        }
-
-        static void calculation()
-        {
-
-        }
-
-        static int Add()
-        {
-            return 5 + 5; 
+            return $"Hello my name is {name} and my age is {age}!";
         }
 
 
-
-        static int[] CreateRandomArray()
+        static string ReadString(string message)
         {
-            
-
-            return new int[3] { 0,1,2 };
+            Console.WriteLine($"{message}: ");
+            return Console.ReadLine();
         }
 
-        static int ReadNumberFromConsole()
+        static int ReadInt(string message)
         {
-            Console.Write("Enter a number: ");
+            Console.Write($"{message}: ");
             return Convert.ToInt32(Console.ReadLine());
         }
 
 
-        static string ReturnName()
+        static int Add(int a, int b)
         {
-            return "Arthur";
+           return a + b;
+
         }
 
-        static int ReturnAge()
-        {
-            return 23;
-        }
-
-
-        static string ReturnNameAgePair()
-        {
-            return $"{ReturnName()} - {ReturnAge()}";
-        }
-
-        static void PrintIntroduction()
-        {
-            /*string name = ReturnName();
-            int age = ReturnAge();
-            string output = $"Hello my name is {name} and my age is {age}";
-            Console.WriteLine(output);*/
-
-            Console.WriteLine($"Hello my name is {ReturnName()} and my age is {ReturnAge()}");
-        }
+       
 
     }
 }
