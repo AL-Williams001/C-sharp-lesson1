@@ -23,30 +23,93 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
+            int num = 0;
+            test(out num);
+            Console.WriteLine(num); //5
+            //Console.WriteLine(success);
+            //int.TryParse("123", out int result);
 
-            string nameInput = "AL";
-            int ageInput = 23;
-            string addressInput = "1 Something Road";
+            //int.TryParse();
 
-            PrintDetails(address: addressInput,
-                        age: ageInput, 
-                        name: nameInput);
+            List<string> shoppingList = new List<string>
+            {
+                "Coffee", "Milk"
+            };
 
-        
+            Console.WriteLine(shoppingList.IndexOf("Milk"));
+            //Console.WriteLine(FindInList("Milk", shoppingList, out int index));
+            //Console.WriteLine(index);
 
+            Console.Write("Enter an item to search: ");
+            string search = Console.ReadLine();
+
+            if (FindInList(search, shoppingList, out int index))
+            {
+                Console.WriteLine($"Found {search} at index {index}");
+            }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+
+
+
+
+
+
+            /* int index = -1 // 0 - >
+
+             for (int i = 0; i < shoppingList.Count; i++)
+             {
+                 if (shoppingList[i].ToLower().Equals("milk"))
+                 {
+                     index = i;
+                 }
+             }
+
+             bool found = index > -1;
+
+             Console.WriteLine(found ? "Found" : "Not Found");*/
 
             Console.ReadLine();
 
         }
 
-        
-       static void PrintDetails (string name, int age, string address)
+        static bool FindInList(string s, List<string> list, out int index)
         {
-            Console.WriteLine($"Name: {name}");
-            Console.WriteLine($"Age: {age}");
-            Console.WriteLine($"Address: {address}");
+            index = -1;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].ToLower().Equals(s.ToLower()))
+                {
+                    index = i;
+                }
+            }
+
+
+            return index > -1;
         }
 
+        static bool TryParse(string s, out int result)
+        {
+            result = 0;
+            return true;
+        }
+
+
+
+        static void test(out int num)
+        {
+            /*num = 5;
+            return  num*/;
+
+            num = 5;
+            
+            //return  true;
+        }
+        
+      
 
 
     }
