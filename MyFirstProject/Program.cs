@@ -23,91 +23,57 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            int num = 0;
-            test(out num);
-            Console.WriteLine(num); //5
-            //Console.WriteLine(success);
-            //int.TryParse("123", out int result);
+            /* int num = 10;
+             string name = "";
+             Assign(ref num, ref name);
+             Console.WriteLine(num);
+             Console.WriteLine(name);*/
 
-            //int.TryParse();
+            string name = "AL";
 
-            List<string> shoppingList = new List<string>
+            Console.Write("Enter your new name: ");
+            string newName = Console.ReadLine();
+
+
+            if(ChangeName(ref name, newName))
             {
-                "Coffee", "Milk"
-            };
-
-            Console.WriteLine(shoppingList.IndexOf("Milk"));
-            //Console.WriteLine(FindInList("Milk", shoppingList, out int index));
-            //Console.WriteLine(index);
-
-            Console.Write("Enter an item to search: ");
-            string search = Console.ReadLine();
-
-            if (FindInList(search, shoppingList, out int index))
-            {
-                Console.WriteLine($"Found {search} at index {index}");
+                Console.WriteLine($"Your new name is {name}!");
             }
             else
             {
-                Console.WriteLine("Not found");
+                Console.WriteLine("New name cannot be empty or null!");
             }
 
-
-
-
-
-
-            /* int index = -1 // 0 - >
-
-             for (int i = 0; i < shoppingList.Count; i++)
-             {
-                 if (shoppingList[i].ToLower().Equals("milk"))
-                 {
-                     index = i;
-                 }
-             }
-
-             bool found = index > -1;
-
-             Console.WriteLine(found ? "Found" : "Not Found");*/
+            
 
             Console.ReadLine();
 
         }
 
-        static bool FindInList(string s, List<string> list, out int index)
+        static bool ChangeName(ref string name, string newName)
         {
-            index = -1;
-
-            for (int i = 0; i < list.Count; i++)
+            if (!string.IsNullOrEmpty(newName))
             {
-                if (list[i].ToLower().Equals(s.ToLower()))
-                {
-                    index = i;
-                }
-            }
 
-
-            return index > -1;
-        }
-
-        static bool TryParse(string s, out int result)
-        {
-            result = 0;
+            name = newName;
             return true;
+                
+            }
+            return false;
         }
 
-
-
-        static void test(out int num)
+        static void Assign(ref int num, ref string name)
         {
-            /*num = 5;
-            return  num*/;
-
-            num = 5;
-            
-            //return  true;
+            name = "AL";
+            num =  20;
         }
+
+    
+
+        
+
+
+
         
       
 
