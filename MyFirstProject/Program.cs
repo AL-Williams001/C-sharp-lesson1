@@ -23,43 +23,75 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-           
-            int width = ReadInt("width");
-            int height = ReadInt("height");
+            int[] numbers = new int[]
+            {
+               0, 1, 2, 3, 4, 5, 100
+            };
 
+            int result = SumOfNumbers(numbers);
 
-            int result = CalcArea(width, height);
+            if(result > -1)
+            {
+                Console.WriteLine($"The total is: {result}");
+            }
+            else
+            {
+                Console.WriteLine("Cannot add up an empty Array!");
+            }
 
-            Console.WriteLine($"The area is {result}");
-
+            if (SumOfNumbers(numbers, out int total))
+            {
+                Console.WriteLine($"The total is: {total}");
+            }
+            else
+            {
+                Console.WriteLine("Cannot add up an empty Array!");
+            }
 
             Console.ReadLine();
 
         }
 
-        static int CalcArea(int width, int height)
+        static int SumOfNumbers(int[] numbers)
         {
-            return (width * height) / 2;
+            if (numbers.Length > 0)
+            {
+
+
+                int total = 0;
+
+                foreach (var item in numbers)
+                {
+                    total += item;
+                }
+
+                return total;
+
+            }
+
+            return -1;
+
         }
 
-        static int ReadInt(string message)
+        static bool SumOfNumbers(int[] numbers, out int total)
         {
-            Console.Write($"Enter {message}: ");
-            return Convert.ToInt32(Console.ReadLine());
+            total = 0;
+
+            if (numbers.Length > 0)
+            {
+
+                foreach (var item in numbers)
+                {
+                    total += item;
+                }
+
+                return true;
+
+            }
+
+            return false;
+
         }
-
-       
-
-       
-    
-
-        
-
-
-
-        
-      
-
 
     }
 }
