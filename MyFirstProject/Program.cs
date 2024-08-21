@@ -23,51 +23,34 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            /* int num = 10;
-             string name = "";
-             Assign(ref num, ref name);
-             Console.WriteLine(num);
-             Console.WriteLine(name);*/
-
-            string name = "AL";
-
-            Console.Write("Enter your new name: ");
-            string newName = Console.ReadLine();
+           
+            int width = ReadInt("width");
+            int height = ReadInt("height");
 
 
-            if(ChangeName(ref name, newName))
-            {
-                Console.WriteLine($"Your new name is {name}!");
-            }
-            else
-            {
-                Console.WriteLine("New name cannot be empty or null!");
-            }
+            int result = CalcArea(width, height);
 
-            
+            Console.WriteLine($"The area is {result}");
+
 
             Console.ReadLine();
 
         }
 
-        static bool ChangeName(ref string name, string newName)
+        static int CalcArea(int width, int height)
         {
-            if (!string.IsNullOrEmpty(newName))
-            {
-
-            name = newName;
-            return true;
-                
-            }
-            return false;
+            return (width * height) / 2;
         }
 
-        static void Assign(ref int num, ref string name)
+        static int ReadInt(string message)
         {
-            name = "AL";
-            num =  20;
+            Console.Write($"Enter {message}: ");
+            return Convert.ToInt32(Console.ReadLine());
         }
 
+       
+
+       
     
 
         
