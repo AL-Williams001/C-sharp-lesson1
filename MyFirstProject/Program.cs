@@ -23,75 +23,47 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            int[] numbers = new int[]
-            {
-               0, 1, 2, 3, 4, 5, 100
-            };
 
-            int result = SumOfNumbers(numbers);
 
-            if(result > -1)
+            bool looping = true;
+
+            while (looping)
             {
-                Console.WriteLine($"The total is: {result}");
-            }
-            else
-            {
-                Console.WriteLine("Cannot add up an empty Array!");
+
+                try
+                {
+                    Console.Write("Enter a number: ");
+                    int num = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(num);
+
+                    looping = false;
+
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please only enter numbers!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Please enter a number less than 2b!");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Something has gone wrong!");
+                }
+
             }
 
-            if (SumOfNumbers(numbers, out int total))
-            {
-                Console.WriteLine($"The total is: {total}");
-            }
-            else
-            {
-                Console.WriteLine("Cannot add up an empty Array!");
-            }
+
+            Console.WriteLine("Goodbye!");           
 
             Console.ReadLine();
 
         }
 
-        static int SumOfNumbers(int[] numbers)
-        {
-            if (numbers.Length > 0)
-            {
+       
 
-
-                int total = 0;
-
-                foreach (var item in numbers)
-                {
-                    total += item;
-                }
-
-                return total;
-
-            }
-
-            return -1;
-
-        }
-
-        static bool SumOfNumbers(int[] numbers, out int total)
-        {
-            total = 0;
-
-            if (numbers.Length > 0)
-            {
-
-                foreach (var item in numbers)
-                {
-                    total += item;
-                }
-
-                return true;
-
-            }
-
-            return false;
-
-        }
+        
 
     }
 }
