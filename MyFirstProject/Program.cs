@@ -24,42 +24,37 @@ namespace MyFirstProject
         {
 
 
-
-            bool looping = true;
-
-            while (looping)
+            try
+            {
+                Console.Write("Enter a number: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(num);
+            }
+            catch (FormatException)
             {
 
-                try
-                {
-                    Console.Write("Enter a number: ");
-                    int num = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(num);
+                Console.WriteLine("Please only enter numbers!");
+            }
+            catch (OverflowException)
+            {
 
-                    looping = false;
-
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Please only enter numbers!");
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine("Please enter a number less than 2b!");
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Something has gone wrong!");
-                }
-
+                Console.WriteLine("Please enter a value under 2 billion!");
+            }
+            catch (Exception e)
+            {
+                
+                Console.WriteLine($"Error: {e.Message}");
             }
 
+            Console.WriteLine("Goodbye!");
 
-            Console.WriteLine("Goodbye!");           
+
 
             Console.ReadLine();
 
         }
+
+       
 
        
 
