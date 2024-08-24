@@ -24,29 +24,36 @@ namespace MyFirstProject
         {
 
 
+
+            /*bool success = false;
+
+
+
             try
             {
                 Console.Write("Enter a number: ");
                 int num = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(num);
+                success = true;
             }
-            catch (FormatException)
+            catch (FormatException e)
             {
-
-                Console.WriteLine("Please only enter numbers!");
-            }
-            catch (OverflowException)
-            {
-
-                Console.WriteLine("Please enter a value under 2 billion!");
-            }
-            catch (Exception e)
-            {
-                
-                Console.WriteLine($"Error: {e.Message}");
+                Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("Goodbye!");
+            Console.WriteLine(success ? "Yey" : "Oh no!");*/
+
+
+            Console.Write("Enter a number: ");
+            if (TryParse(Console.ReadLine(), out int result))
+            {
+                Console.WriteLine("Yey " + result);
+            }
+            else
+            {
+                Console.WriteLine("Oh no!");
+            }
+           
+
 
 
 
@@ -54,6 +61,22 @@ namespace MyFirstProject
 
         }
 
+        static bool TryParse(string input, out int result)
+        {
+            result = -1;
+
+            try
+            {
+                result = Convert.ToInt32(input);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            
+        }
        
 
        
