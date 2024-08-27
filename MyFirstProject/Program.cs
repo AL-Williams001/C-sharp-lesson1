@@ -18,7 +18,7 @@ namespace MyFirstProject
 
      class Program
     {
-
+        // used to learn and test Watch window for debugging
        
         static void Main(string[] args)
         {
@@ -26,7 +26,14 @@ namespace MyFirstProject
 
             string name = "AL";
             int age;
-            age = 21; // changed just to be able to pull
+            age = 23; 
+
+            if (age > 18)
+            {
+
+                Console.WriteLine("18+");
+
+            }
 
             PrintDetails(name, age);
 
@@ -36,6 +43,12 @@ namespace MyFirstProject
             Console.ReadLine();
 
         }
+        static void PrintDetails(string name, int age)
+        {
+            Console.WriteLine($"{name} - {age}");
+          
+        }
+
 
         static string ReadFromConsole(string message)
         {
@@ -43,16 +56,8 @@ namespace MyFirstProject
             return Console.ReadLine();
         }
 
-        static void PrintDetails(string name, int age)
-        {
-            Console.WriteLine($"{name} - {age}");
-            Console.WriteLine($"{name} - {age}");
-            Console.WriteLine($"{name} - {age}");
-            Console.WriteLine($"{name} - {age}");
-        }
-
        
-        //used the same code to learn Local/Auto window for debugging
+       
         
 
     }
