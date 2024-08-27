@@ -26,7 +26,7 @@ namespace MyFirstProject
 
             string name = "AL";
             int age;
-            age = 21; 
+            age = 21; // changed just to be able to pull
 
             PrintDetails(name, age);
 
@@ -52,7 +52,7 @@ namespace MyFirstProject
         }
 
        
-
+        //used the same code to learn Local/Auto window for debugging
         
 
     }
