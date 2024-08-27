@@ -26,7 +26,7 @@ namespace MyFirstProject
 
             string name = "AL";
             int age;
-            age = 23; 
+            age = 21; 
 
             PrintDetails(name, age);
 
