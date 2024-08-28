@@ -18,44 +18,34 @@ namespace MyFirstProject
 
      class Program
     {
-        // used to learn and test Watch window for debugging
+        
        
         static void Main(string[] args)
         {
 
+            int age = 65;
 
-            string name = "AL";
-            int age;
-            age = 23; 
 
-            if (age > 18)
+            if (age > 18 && age < 30)
             {
-
-                Console.WriteLine("18+");
+                Console.WriteLine("Over 18");
 
             }
+            else if(age > 30 && age < 50)
+            {
+                Console.WriteLine("Over 30");
+            }
+            else if (age > 50)
+            {
+                Console.WriteLine("Over 50");
+            }
 
-            PrintDetails(name, age);
 
-            string message = ReadFromConsole("Enter anything: ");
-            Console.WriteLine(message);
 
             Console.ReadLine();
 
         }
-        static void PrintDetails(string name, int age)
-        {
-            Console.WriteLine($"{name} - {age}");
-          
-        }
-
-
-        static string ReadFromConsole(string message)
-        {
-            Console.WriteLine(message);
-            return Console.ReadLine();
-        }
-
+        
        
        
         
