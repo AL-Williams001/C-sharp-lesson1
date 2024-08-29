@@ -23,10 +23,10 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            int age = 65;
+            int age = 55;
 
 
-            if (age > 18 && age < 30)
+            if (age > 18 && age < 30) // use conditional to get a specific range
             {
                 Console.WriteLine("Over 18");
 
