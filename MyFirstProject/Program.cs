@@ -45,17 +45,17 @@ namespace MyFirstProject
         {
             Person person = new Person("AL", 23, 1);
             //Console.WriteLine($"Name: {person.name}\nAge: {person.age}");
-            Console.WriteLine(ReturnDetails(person));
+            //Console.WriteLine(ReturnDetails(person));
             Console.WriteLine(person.ReturnDetails());
 
             Console.ReadLine();
         }
 
-        static string ReturnDetails(Person person)
+        /*static string ReturnDetails(Person person)
         {
             return $"Name: {person.name}\nAge: {person.age}\nNumbers: {person.number}";
             //person.number
-        }
+        }*/
 
        /* static string ReturnDetails(string name, int age)
         {
