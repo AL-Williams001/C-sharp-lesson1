@@ -18,44 +18,24 @@ namespace MyFirstProject
 
     class Program
     {
-       /* struct Person
-        {
-            public string name;
-            public int age;
-
-            public Person(string name, int age)
-            {
-                this.name = name;
-                this.age = age;
-            } 
-        }*/
+       
 
         class Person
         {
             public string name;
             public int age;
+            public int number;
 
-            public Person()
-            {
-            }
-
-            public Person(string name)
-            {
-                this.name = name;
-                this.age = -1;
-            }
-
-            public Person(int age)
-            {
-                this.age = age;
-                this.name = "";
-            }
-
-
-            public Person(string name, int age)
+            public Person(string name, int age, int number) 
             {
                 this.name = name;
                 this.age = age;
+                this.number = number;
+            }
+
+            public string ReturnDetails()
+            {
+                return $"Name: {name}\nAge: {age}\nNumbers: {number}";
             }
 
 
@@ -63,27 +43,30 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
-
-            Console.Write("Enter your age: ");
-            int age = Convert.ToInt32(Console.ReadLine());
-
-            Person person = new Person(name, age);
-
-            Console.WriteLine(person.name);
-            Console.WriteLine(person.age);
+            Person person = new Person("AL", 23, 1);
+            //Console.WriteLine($"Name: {person.name}\nAge: {person.age}");
+            Console.WriteLine(ReturnDetails(person));
+            Console.WriteLine(person.ReturnDetails());
 
             Console.ReadLine();
-
         }
 
-        
+        static string ReturnDetails(Person person)
+        {
+            return $"Name: {person.name}\nAge: {person.age}\nNumbers: {person.number}";
+            //person.number
+        }
+
+       /* static string ReturnDetails(string name, int age)
+        {
+            return $"Name: {name}\nAge: {age}";
+        }*/
 
 
-                    
-       
-        
+
+
+
+
 
     }
 }
