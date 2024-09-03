@@ -22,45 +22,85 @@ namespace MyFirstProject
 
         class Person
         {
-            public string name;
-            public int age;
-            public int number;
+            private string name;
+            private int age;
+            
 
-            public Person(string name, int age, int number) 
+            public Person(string name, int age) 
             {
                 this.name = name;
                 this.age = age;
-                this.number = number;
+                
             }
+
+            public void SetName(string name)
+            {
+                /*if (!string.IsNullOrEmpty(name))
+                {
+                this.name = name;
+                }
+                else
+                {
+                    this.name = "Invalid name";
+                }*/
+
+                this.name = !string.IsNullOrEmpty(name) ? name : "Invalid name";
+            }
+
+            /*public string GetName()
+            {
+                return name;
+            }*/
+
+            public string GetName() => name;
 
             public string ReturnDetails()
             {
-                return $"Name: {name}\nAge: {age}\nNumbers: {number}";
+                return $"Name: {name}\nAge: {age}";
             }
 
+            public void SetAge(int age)
+            {
+                /*if (age >= 0 && age <= 150)
+                {
+                    this.age = age;
+                }
+                else
+                {
+                    this.age = -1;
+                }*/
+                //condition ? true : false
+                this.age = age >= 0 && age <= 150 ? age : -1;
+            }
+
+            /*public int GetAge()
+            {
+                return age;
+            }*/
+
+            public int GetAge() => age;
 
         }
 
         static void Main(string[] args)
         {
-            Person person = new Person("AL", 23, 1);
-            //Console.WriteLine($"Name: {person.name}\nAge: {person.age}");
-            //Console.WriteLine(ReturnDetails(person));
+            Person person = new Person("AL", 23);            
             Console.WriteLine(person.ReturnDetails());
+
+            //person.name = "Art";
+            //person.age = 21;
+
+            person.SetName("Art");
+            person.SetAge(21);
+            Console.WriteLine(person.ReturnDetails());
+
+            Console.WriteLine($"Your name is {person.GetName()} amd your age is {person.GetAge()}");
+            
 
             Console.ReadLine();
         }
 
-        /*static string ReturnDetails(Person person)
-        {
-            return $"Name: {person.name}\nAge: {person.age}\nNumbers: {person.number}";
-            //person.number
-        }*/
-
-       /* static string ReturnDetails(string name, int age)
-        {
-            return $"Name: {name}\nAge: {age}";
-        }*/
+        
 
 
 
