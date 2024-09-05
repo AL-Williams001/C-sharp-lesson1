@@ -24,19 +24,52 @@ namespace MyFirstProject
         {
             private string name;
             private int age;
-            private string test = "hello";// global scope
+
+
+            // Auto property used for just getting and setting and no additional logic
+           /* public string Name { get; set; }
+            public int Age { get; set; }*/
+
+
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = !string.IsNullOrEmpty(value) ? value : "Invalid name";
+                }
+            }
+
+            //public string Name { get => name; set => name = value; }
+
+            public int Age
+            {
+                get
+                {
+                    return age;
+                }
+                set
+                {
+                    age = value >= 0 && value <= 150 ? value : -1;
+                }
+            }
+
+            //public int Age { get => age; set => age = value; }
+           
             
 
             public Person(string name, int age) 
             {
-                this.name = name;
-                this.age = age;
-                string test = "hi";// local scope and it takes priotity over global scope
-                Console.WriteLine(test);
+               
+                Name = name;
+                Age = age;
 
             }
 
-            public void SetName(string name)
+            /*public void SetName(string name)
             {
           
                 this.name = !string.IsNullOrEmpty(name) ? name : "Invalid name";
@@ -59,16 +92,16 @@ namespace MyFirstProject
             public int GetAge()
             {
                return age; 
-            }
+            }*/
 
             public string ReturnDetails()
             {
-                return $"Name: {name}\nAge: {age}";
+                return $"Name: {Name}\nAge: {Age}";
             }
 
         }
 
-        static int x = 5;
+       
 
         static void Main(string[] args)
         {
@@ -77,14 +110,16 @@ namespace MyFirstProject
             Person person = new Person("AL", 23);            
             Console.WriteLine(person.ReturnDetails());
 
-            x = 20;
+            person.Name = "Art";
+            person.Age = 21;
+
+
+            //Console.WriteLine(person.ReturnDetails());
+
+
+            Console.WriteLine($"Your name is {person.Name} and your age is {person.Age}");
 
             Console.ReadLine();
-        }
-
-        static void something(Person person)
-        {
-            x = 10;
         }
 
         
