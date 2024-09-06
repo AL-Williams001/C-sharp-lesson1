@@ -26,9 +26,7 @@ namespace MyFirstProject
             private int age;
 
 
-            // Auto property used for just getting and setting and no additional logic
-           /* public string Name { get; set; }
-            public int Age { get; set; }*/
+            
 
 
             public string Name
@@ -43,7 +41,7 @@ namespace MyFirstProject
                 }
             }
 
-            //public string Name { get => name; set => name = value; }
+            
 
             public int Age
             {
@@ -57,7 +55,7 @@ namespace MyFirstProject
                 }
             }
 
-            //public int Age { get => age; set => age = value; }
+           
            
             
 
@@ -69,35 +67,32 @@ namespace MyFirstProject
 
             }
 
-            /*public void SetName(string name)
+            
+
+            /*public string ReturnDetails()
             {
-          
-                this.name = !string.IsNullOrEmpty(name) ? name : "Invalid name";
-            }
-
-          
-
-            public string GetName()
-            {
-                return name;
-            }
-
-
-            public void SetAge(int age)
-            {
-                this.age = age >= 0 && age <= 150 ? age : -1;
-            }
-          
-
-            public int GetAge()
-            {
-               return age; 
+                return $"Name: {Name}\tAge: {Age}";
             }*/
 
-            public string ReturnDetails()
+            public override string ToString()
             {
-                return $"Name: {Name}\nAge: {Age}";
+                return $"Name: {Name}\tAge: {Age}";
             }
+
+            public override bool Equals(object obj)
+            {
+                if (obj is Person)
+                {
+                Person person = obj as Person;
+                return Name.Equals(person.Name) && Age == person.Age;
+                }
+
+                return false;
+                
+            }
+
+
+
 
         }
 
@@ -107,17 +102,23 @@ namespace MyFirstProject
         {
             
 
-            Person person = new Person("AL", 23);            
-            Console.WriteLine(person.ReturnDetails());
-
-            person.Name = "Art";
-            person.Age = 21;
-
-
+            Person person = new Person("AL", 23);
+            Person test = new Person("AL", 23);
             //Console.WriteLine(person.ReturnDetails());
+            //Console.WriteLine(person.ToString());
+           
+
+            if (person.Equals(test))
+            {
+                Console.WriteLine("Same");
+            }
+            else
+            {
+                Console.WriteLine("Not the same");
+            }
 
 
-            Console.WriteLine($"Your name is {person.Name} and your age is {person.Age}");
+
 
             Console.ReadLine();
         }
